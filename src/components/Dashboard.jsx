@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FiTrash2, FiLogOut, FiUsers, FiRefreshCw, FiCheck } from 'react-icons/fi';
 import Alert from './Alert';
 
+
 const Dashboard = ({ onLogout }) => {
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -10,7 +11,7 @@ const Dashboard = ({ onLogout }) => {
   const [checkingUserId, setCheckingUserId] = useState(null);
   const [userToDelete, setUserToDelete] = useState(null);
 
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     fetchUsers();
